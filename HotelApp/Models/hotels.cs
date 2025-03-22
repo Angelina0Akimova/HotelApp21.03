@@ -7,18 +7,17 @@ namespace HotelApp.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        [StringLength(50)]
+        [StringLength(20)]
         public string Name { get; set; } = null!;
         [Required]
-        [StringLength(50)]
+        [StringLength(20)]
         public string Address { get; set; } = null!;
         [Required]
-        [StringLength(50)]
+        [StringLength(20)]
         public string City { get; set; } = null!;
         [Required]
-        [StringLength(50)]
+        [StringLength(20)]
         public string Country { get; set; } = null!;
-        [Required]
-        [StringLength(50)]
+
     }
 }
