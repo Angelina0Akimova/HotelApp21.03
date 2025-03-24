@@ -29,13 +29,20 @@ public class AccountController : Controller
 
             if (result.Succeeded)
             {
+                // Автоматически входим в систему после регистрации
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                return RedirectToAction("Index", "Home");
+
+                // Перенаправляем на страницу профиля
+                return RedirectToAction("Index", "Profile");
             }
 
             foreach (var error in result.Errors)
+            {
                 ModelState.AddModelError("", error.Description);
+            }
         }
+
+        // Если что-то пошло не так, возвращаем представление с ошибками
         return View(model);
     }
 

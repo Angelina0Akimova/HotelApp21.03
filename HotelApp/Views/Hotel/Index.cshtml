@@ -6,6 +6,20 @@
 
 <h2>@ViewData["Title"]</h2>
 
+<!-- Выпадающий список для сортировки по странам -->
+<form asp-action="Index" method="get" class="mb-3">
+    <div class="form-group">
+        <label for="sortCountry">Сортировать по стране:</label>
+        <select name="sortCountry" class="form-control" onchange="this.form.submit()">
+            <option value="">Все страны</option> <!-- Пустое значение для "Все страны" -->
+            @foreach (var country in ViewBag.Countries)
+            {
+                <option value="@country">@country</option>
+            }
+        </select>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -36,6 +50,4 @@
 </table>
 
 <a asp-action="Create" class="btn btn-primary">Добавить отель</a>
-
-
 

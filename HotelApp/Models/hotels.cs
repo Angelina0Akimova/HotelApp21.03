@@ -19,5 +19,14 @@ namespace HotelApp.Models
         [StringLength(20)]
         public string Country { get; set; } = null!;
 
+        public static readonly List<string> AllowedCountries = new List<string>
+        {
+            "Россия",
+            "США",
+            "Франция",
+            "Германия",
+            "Италия"
+        };
+
     }
 }
